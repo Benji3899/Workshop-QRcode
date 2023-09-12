@@ -2,19 +2,24 @@
 
 namespace App\Controller;
 
-use http\Env\Response;
+
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Forms;
 
 class HomeController
 {
     #[Route('/')]
     public function homepage()
     {
+
+
+        Forms::createFormFactory();
         die('Homepage active');
     }
 
     #[Route('/connected/{username}')]
-    public function connected(string $username): Response
+    public function connected(string $username = null): Response
     {
         if($username){
             $title = 'Bienvenue '.$username;
