@@ -1,0 +1,26 @@
+{
+  "name": "workshop-qrcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benji3899/Workshop-QRcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benji3899/Workshop-QRcode/issues"
+  },
+  "homepage": "https://github.com/Benji3899/Workshop-QRcode#readme",
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "yarn": "^1.22.19"
+  }
+}
