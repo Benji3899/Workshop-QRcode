@@ -1,0 +1,38 @@
+{
+  "name": "workshop-qrcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "encore dev --watch",
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "build": "encore production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benji3899/Workshop-QRcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benji3899/Workshop-QRcode/issues"
+  },
+  "homepage": "https://github.com/Benji3899/Workshop-QRcode#readme",
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.17",
+    "@babel/preset-env": "^7.22.15",
+    "@symfony/webpack-encore": "^4.4.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-notifier": "^1.15.0"
+  }
+}
