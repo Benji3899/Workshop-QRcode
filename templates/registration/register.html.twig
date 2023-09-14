@@ -23,6 +23,8 @@
         emailInput.addEventListener("input", function() {
             var enteredContent = emailInput.value;
             console.log("Contenu entré : " + enteredContent);
+
+            localStorage.setItem('enteredContent', enteredContent);
         });
     </script>
 {% endblock %}

@@ -9,14 +9,26 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 <div id="qr-code"></div>
+<div id="message" style="display: none;">Vous êtes bien présent</div>
 
 <script type="text/javascript">
-let text = "http://ton-url-ici.com" // REMPLACER PAR userEmail LORS DE LA REDIRECTION
-function generateQRCode() {
-    let qrcodeContainer = document.getElementById("qr-code");
-    qrcodeContainer.innerHTML = "";
-    new QRCode(qrcodeContainer, text);
-}
-generateQRCode()
+    let text = "http://ton-url-ici.com";
+        
+        function generateQRCode() {
+            let qrcodeContainer = document.getElementById("qr-code");
+            let qr = new QRCode(qrcodeContainer, text);
+
+            qrcodeContainer.addEventListener("click", function() {
+                qrcodeContainer.style.display = "none";
+                let message = document.getElementById("message");
+                message.style.display = "block";
+            });
+        }
+
+        generateQRCode();
+
+    // JS POUR RETRANSCRIRE LE MAIL ECRIT PAR L'UTILISATEUR
+    var enteredContent = localStorage.getItem('enteredContent');
+    console.log("Contenu récupéré : " + enteredContent);
 </script>
 {% endblock %}
