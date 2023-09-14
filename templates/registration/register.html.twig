@@ -8,23 +8,13 @@
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.email)}}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Valider</button>
+    {{ form_row(registrationForm.agreeTerms) }}
+    <button type="submit" class="btn">Valider</button>
     {{ form_end(registrationForm) }}
-
-    <script type="text/javascript">
-        var emailInput = document.getElementById("registration_form_email");
-
-        emailInput.addEventListener("input", function() {
-            var enteredContent = emailInput.value;
-            console.log("Contenu entré : " + enteredContent);
-
-            localStorage.setItem('enteredContent', enteredContent);
-        });
-    </script>
+    
+    <a class="mt-30" href="/login">Déjà inscrit ?</a>
 {% endblock %}
