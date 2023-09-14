@@ -49,8 +49,8 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // ligne dessous a décomenté pour choisir un URL de redirection précise à modifier => generate('url-a-entrer'));
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+         return new RedirectResponse($this->urlGenerator->generate('app_register'));
+//        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
