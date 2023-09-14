@@ -16,4 +16,13 @@
 
         <button type="submit" class="btn">Valider</button>
     {{ form_end(registrationForm) }}
+
+    <script type="text/javascript">
+        var emailInput = document.getElementById("registration_form_email");
+
+        emailInput.addEventListener("input", function() {
+            var enteredContent = emailInput.value;
+            console.log("Contenu entré : " + enteredContent);
+        });
+    </script>
 {% endblock %}
