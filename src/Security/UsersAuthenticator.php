@@ -30,9 +30,11 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
     {
         // recupération de l'email
         $email = $request->request->get('email', '');
-        // Dans la session, on récupère le dernier utilisateur qui a été tapé
+
+        // Dans la session, on enregistre le dernier nom d'utilisateur tapé
         $request->getSession()->set(Security::LAST_USERNAME, $email);
 
+        // Création d'un passeport avec l'email et le mot de passe entrés par l'utilisateur
         return new Passport(
             // création du passeport en utilisant l'email et le mot de passe entré par l'utilisateur
             new UserBadge($email),
@@ -42,17 +44,20 @@ class UsersAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
+    // Function pour gérer la redirection après une authentification réussie
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+        // Si une cible de redirection est définie dans la session, redirigez l'utilisateur vers cette cible
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        // ligne dessous a décomenté pour choisir un URL de redirection précise à modifier => generate('url-a-entrer'));
-         return new RedirectResponse($this->urlGenerator->generate('app_register'));
+        // Sinon, redirigez l'utilisateur vers une URL spécifique (dans cet exemple, vers 'app_qr_code')
+        return new RedirectResponse($this->urlGenerator->generate('app_qr_code'));
 //        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
+    // Méthode pour obtenir l'URL de la page de connexion
     protected function getLoginUrl(Request $request): string
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);

@@ -3,6 +3,7 @@
 {% block title %}Hello QrCodeController!{% endblock %}
 
 {% block body %}
+    <p>Bonjour {{ prenom ~ ' ' ~ nom }}</p>
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -10,6 +11,7 @@
 </style>
 <div id="qr-code"></div>
 <div id="message" style="display: none;">Vous êtes bien présent</div>
+
 
 <script type="text/javascript">
     let text = "http://ton-url-ici.com";
@@ -31,4 +33,5 @@
     var enteredContent = localStorage.getItem('enteredContent');
     console.log("Contenu récupéré : " + enteredContent);
 </script>
+<p>Scan et signe</p>
 {% endblock %}
