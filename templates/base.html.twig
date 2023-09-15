@@ -10,15 +10,19 @@
         {% block javascripts %}
         {% endblock %}
     </head>
-    <body>
+    <body style="margin: 0; padding: 0; font-family: 'Roboto Light',sans-serif">
     {% block head %}
-        <div>
-            <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+        <div style="background-color: #FFC107;">
+        <div style="display: flex; justify-content: flex-end; width: 80%; margin: auto;">
+            <ul style="list-style-type: none; display: flex; gap: 20px;">
+                <li><a style="text-decoration: none; color:black; font-weight: bold;" href="{{ path('app_login')}}">Connexion</a></li>
+                <li><a style="text-decoration: none; color:black; font-weight: bold;" href="{{ path('app_register') }}">Inscription</a></li>
             </ul>
         </div>
+        </div>
     {% endblock %}
-        {% block body %}{% endblock %}
+        {% block body %}
+
+        {% endblock %}
     </body>
 </html>
