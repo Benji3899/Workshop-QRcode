@@ -22,6 +22,9 @@ class QrCodeController extends AbstractController
 
     public function index(Environment $twig): Response
     {
+
+        return $this->render('qr_code/qr-code.html.twig', ['controller_name' => 'QrCodeController',]);
+
         $user = $this->getUser();
         return new Response($twig->render('qr_code/qr-code.html.twig', [
             'nom' => $user->getNom(),
