@@ -3,12 +3,12 @@
 {% block title %}Hello QrCodeController!{% endblock %}
 
 {% block body %}
-    <p>Bonjour {{ prenom ~ ' ' ~ nom }}</p>
+    <p style="text-align: center; margin: 100px 0 40px 0">Bonjour {{ prenom ~ ' ' ~ nom }}</p>
 <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    .title {text-align: center; color: #ffc107}
+    .title {text-align: center; color: #ffc107; margin-bottom: -40px}
     #qr-code { width: 100%; height: 400px; display: flex; justify-content: center; align-items: center;}
 </style>
 <h1 class="title">Êtes-vous présent ?</h1>
@@ -35,7 +35,5 @@
         generateQRCode();
     });
 </script>
-
-<p>Scan et signe</p>
 {% endblock %}
 

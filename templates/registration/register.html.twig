@@ -3,21 +3,33 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <h1>Inscription</h1>
+    <div id="pageregister" style="width: 60%; margin: 50px auto;">
 
-    {{ form_errors(registrationForm) }}
+        <h1 style="text-align: center; margin-bottom: 50px">Inscription</h1>
+        {#        <div class="test" style="margin: auto; width: 30%; display: flex; flex-direction: column; gap: 20px;"> #}
+        {{ form_errors(registrationForm) }}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email)}}
+        {{ form_start(registrationForm) }}
+
+        {{ form_row(registrationForm.email) }}
+
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-    {{ form_row(registrationForm.nom) }}
-    {{ form_row(registrationForm.prenom) }}
-    {{ form_row(registrationForm.agreeTerms) }}
-    <button type="submit" class="btn">Valider</button>
-    {{ form_end(registrationForm) }}
-    
-    <a href={{ path('app_login')}}> Déjà inscrit ? </a>
+        {{ form_row(registrationForm.nom) }}
+
+        {{ form_row(registrationForm.prenom) }}
+
+        {{ form_row(registrationForm.agreeTerms) }}
+        <div style="justify-content: flex-end; gap: 20px;">
+            <a href={{ path('app_login') }}> Déjà inscrit ? </a>
+            <button type="submit" class="btn">Valider</button>
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+
+    </div>
+
+
 
 {% endblock %}
