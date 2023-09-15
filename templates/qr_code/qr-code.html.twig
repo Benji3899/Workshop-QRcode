@@ -14,8 +14,6 @@
 <h1 class="title">Êtes-vous présent ?</h1>
 <div id="qr-code"></div>
 
-<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-
 <script type="text/javascript">
 
     var enteredContent = localStorage.getItem('enteredContent');
@@ -31,6 +29,7 @@
                 width: 250,
                 height: 250
             });
+        }
 
         generateQRCode();
     });
